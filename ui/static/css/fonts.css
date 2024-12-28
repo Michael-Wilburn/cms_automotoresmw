@@ -1,0 +1,72 @@
+/* SF Pro Display Black Italic */
+@font-face {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 900;
+    src: url(/static/fonts/sf-pro-display/SFPRODISPLAYBLACKITALIC.otf)
+        format("opentype");
+}
+/* SF Pro Display Bold */
+@font-face {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 700;
+    src: url(/static/fonts/sf-pro-display/SFPRODISPLAYBOLD.otf)
+        format("opentype");
+}
+/* SF Pro Display Heavy Italic */
+@font-face {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 800;
+    src: url(/static/fonts/sf-pro-display/SFPRODISPLAYHEAVYITALIC.otf)
+        format("opentype");
+}
+/* SF Pro Display Light Italic */
+@font-face {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 300;
+    src: url(/static/fonts/sf-pro-display/SFPRODISPLAYLIGHTITALIC.otf)
+        format("opentype");
+}
+/* SF Pro Display Medium */
+@font-face {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 500;
+    src: url(/static/fonts/sf-pro-display/SFPRODISPLAYMEDIUM.otf)
+        format("opentype");
+}
+/* SF Pro Display Regular */
+@font-face {
+    font-family: "SF Pro Display";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/static/fonts/sf-pro-display/SFPRODISPLAYREGULAR.otf)
+        format("opentype");
+}
+/* SF Pro Display SemiBold Italic */
+@font-face {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 600;
+    src: url(/static/fonts/sf-pro-display/SFPRODISPLAYSEMIBOLDITALIC.otf)
+        format("opentype");
+}
+/* SF Pro Display Thin Italic */
+@font-face {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 100;
+    src: url(/static/fonts/sf-pro-display/SFPRODISPLAYTHINITALIC.otf)
+        format("opentype");
+}
+/* SF Pro Display UltraLight Italic */
+@font-face {
+    font-family: "SF Pro Display";
+    font-style: italic;
+    font-weight: 200;
+    src: url(/static/fonts/sf-pro-display/SFPRODISPLAYULTRALIGHTITALIC.otf)
+        format("opentype");
+}
