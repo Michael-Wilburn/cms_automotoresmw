@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"flag"
 	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -29,9 +30,10 @@ type config struct {
 	}
 }
 type application struct {
-	config config
-	logger *logger
-	models data.Models
+	config        config
+	logger        *logger
+	models        data.Models
+	errorTemplate *template.Template
 }
 
 func main() {
@@ -65,6 +67,11 @@ func main() {
 		config: cfg,
 		logger: logger,
 		models: data.NewModels(db),
+	}
+
+	err = app.loadTemplates()
+	if err != nil {
+		logger.errorLog.Fatalf("Error loading templates: %v", err)
 	}
 
 	srv := &http.Server{

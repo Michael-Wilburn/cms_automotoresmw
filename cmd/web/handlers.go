@@ -14,6 +14,8 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	files := []string{
 		"./ui/html/base.html",
 		"./ui/html/partials/nav.html",
+		"./ui/html/partials/header.html",
+		"./ui/html/partials/footer.html",
 		"./ui/html/pages/home.html",
 	}
 
@@ -43,5 +45,10 @@ func (app *application) carView(w http.ResponseWriter, r *http.Request) {
 }
 
 func (app *application) carCreate(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Display the form for creating a new snippet..."))
+	if r.Method != http.MethodPost {
+		w.Header().Set("Allow", http.MethodPost)
+		app.methodNotAllowed(w)
+		return
+	}
+	w.Write([]byte("Create a new car..."))
 }

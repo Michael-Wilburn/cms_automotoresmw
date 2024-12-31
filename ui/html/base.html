@@ -14,12 +14,9 @@
         />
     </head>
     <body>
-        <header>
-            <h1><a href="/"></a></h1>
-            {{template "nav" .}}
-        </header>
-        <main>{{template "main" .}}</main>
-        <footer>Powered by <a href="https://golang.org/">Go</a></footer>
+        {{template "header" .}}
+        {{template "main" .}}
+        {{template "footer" .}}
     </body>
 </html>
 {{end}}
