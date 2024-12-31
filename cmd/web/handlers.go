@@ -21,14 +21,14 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 
 	ts, err := template.ParseFiles(files...)
 	if err != nil {
-		app.errorLog.Print(err.Error())
+		app.logger.errorLog.Print(err.Error())
 		app.serverError(w, err)
 		return
 	}
 
 	err = ts.ExecuteTemplate(w, "base", nil)
 	if err != nil {
-		app.errorLog.Print(err.Error())
+		app.logger.errorLog.Print(err.Error())
 		app.serverError(w, err)
 	}
 }
