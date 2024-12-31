@@ -1,0 +1,18 @@
+{
+  "name": "cms_automotoresmw",
+  "version": "1.0.0",
+  "description": "Web application called cms_automotoresmw, which lets car dealer shops administrate car fleet, clients, sales, and more.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./ui/static/css/styles.css -o ./ui/static/css/main.css"
+  },  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}
+

@@ -1,0 +1,30 @@
+# Ignorar archivos generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar dependencias de Node.js
+node_modules/
+
+# Ignorar archivos de compilación de Tailwind
+/ui/static/css/main.css
+
+# Ignorar archivos de configuración de PostCSS
+/postcss.config.js
+
+# Ignorar archivos de configuración de Tailwind
+/tailwind.config.js
+
+# Ignorar archivos de log de Go
+*.log
+
+# Ignorar los archivos de Go que contienen binarios generados
+/bin/
+/cmd/
+/internal/
+
+# Ignorar el archivo de configuración de Go mod
+go.sum
+go.mod
+
+# Ignorar archivos generados por build de Go
+/build/
