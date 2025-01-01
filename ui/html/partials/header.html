@@ -1,6 +1,23 @@
 {{define "header"}}
-<header>
-    <h1><a href="/"></a></h1>
-    {{template "nav" .}}
+<header class="flex justify-between h-20 items-center border-b border-[#e4e5e7] bg-white">
+    <a class="ml-8" href="/">
+        <img class="w-40 sm:w-56 h-auto" src="/static/img/logo.svg" alt="logo">
+    </a>
+    <input type="checkbox" id="checkbox">
+    <label for="checkbox">
+        <svg id="sign-one" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6">
+            <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+        </svg>
+        <svg id="sign-two" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="w-6 h-6 hidden">
+            <path d="M242.7 256l100.1-100.1c12.3-12.3 12.3-32.2 0-44.5l-22.2-22.2c-12.3-12.3-32.2-12.3-44.5 0L176 189.3 75.9 89.2c-12.3-12.3-32.2-12.3-44.5 0L9.2 111.5c-12.3 12.3-12.3 32.2 0 44.5L109.3 256 9.2 356.1c-12.3 12.3-12.3 32.2 0 44.5l22.2 22.2c12.3 12.3 32.2 12.3 44.5 0L176 322.7l100.1 100.1c12.3 12.3 32.2 12.3 44.5 0l22.2-22.2c12.3-12.3 12.3-32.2 0-44.5L242.7 256z"/>
+        </svg>
+    </label>
+    <nav class="header__menu bg-white">
+        <ul class="header__menu__list">
+            <li><a href="/" id="home" class="hover:text-[#f05225]">Inicio</a></li>
+            <li><a href="./user/logout" class="hover:text-[#f05225]">Logout</a></li>
+            <li><a href="./user/profile" class="hover:text-[#f05225]">Perfil</a></li>
+        </ul>
+    </nav>
 </header>
 {{end}}

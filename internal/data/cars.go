@@ -25,6 +25,7 @@ type Car struct {
 	ChasisCode string
 	MotorCode  string
 	Images     []string
+	Codia      string
 }
 
 type CarModel struct {
@@ -33,7 +34,7 @@ type CarModel struct {
 
 func (c CarModel) Insert(car *Car) (uuid.UUID, error) {
 
-	query := `INSERT INTO cars (online, car_type, brand, model, year, kilometers, car_domain, price, info_price, currency, chasis_code, motor_code, images_urls) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING id;`
+	query := `INSERT INTO cars (online, car_type, brand, model, year, kilometers, car_domain, price, info_price, currency, chasis_code, motor_code, images_urls, codia) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING id;`
 
 	args := []interface{}{
 		car.Online,           // $1
@@ -49,6 +50,7 @@ func (c CarModel) Insert(car *Car) (uuid.UUID, error) {
 		car.ChasisCode,       // $11
 		car.MotorCode,        // $12
 		pq.Array([]string{}), // $13 (convertir slice de strings a array PostgreSQL)
+		car.Codia,            // $14
 	}
 
 	return car.Id, c.DB.QueryRow(query, args...).Scan(&car.Id)
@@ -77,6 +79,7 @@ func (c CarModel) Get(id uuid.UUID) (*Car, error) {
 		&car.ChasisCode,
 		&car.MotorCode,
 		pq.Array(&car.Images),
+		&car.Codia,
 	)
 
 	if err != nil {
@@ -89,4 +92,12 @@ func (c CarModel) Get(id uuid.UUID) (*Car, error) {
 	}
 
 	return &car, nil
+}
+
+func (m CarModel) Update(car *Car) error {
+	return nil
+}
+
+func (c CarModel) Delete(id uuid.UUID) error {
+	return nil
 }

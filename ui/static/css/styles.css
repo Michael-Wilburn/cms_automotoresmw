@@ -10,6 +10,76 @@
     font-family: "SF Pro Display", sans-serif;
 }
 
+body {
+    line-height: 1.5;
+    background-color: #f2f2f2;
+    color: #282828;
+    overflow-y: scroll;
+}
+.header__menu {
+    margin: 0 2rem 0 0;
+}
+.header__menu ul {
+    margin: 0;
+}
+.header__menu__list li {
+    display: inline;
+    margin: 0.5rem;
+}
+label #sign-one,
+label #sign-two {
+    font-size: 1.5rem;
+    display: none;
+    cursor: pointer;
+    margin-right: 1.5rem;
+}
+#checkbox {
+    display: none;
+}
+@media screen and (max-width: 776px) {
+    .header__menu {
+      display: none;  
+      position: absolute;
+      z-index: 10;
+      opacity: 0;
+      top: 4.98rem;  
+      transition-property: all;
+      transition-duration: 2s;
+    }
+    .header__menu__list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      padding: 0;
+    }
+    .header__menu__list li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3rem;
+    }
+    #checkbox:checked ~ .header__menu {
+        display: flex; 
+        opacity: 1;
+        transition-property: all;
+        transition-duration: 1s
+    }
+    label #sign-one {
+        display: block;
+        margin-right: 1.5rem;
+    }
+    #checkbox:checked ~ label #sign-one {
+        display: none;
+    }
+    
+    #checkbox:checked ~ label #sign-two {
+        display: block;
+    }
+}
+
 /* html,
 body {
     display: grid;

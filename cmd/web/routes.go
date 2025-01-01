@@ -22,7 +22,7 @@ func (app *application) routes() http.Handler {
 	router.Handler(http.MethodGet, "/static/*filepath", http.StripPrefix("/static", fileServer))
 
 	router.HandlerFunc(http.MethodGet, "/", app.home)
-	router.HandlerFunc(http.MethodGet, "/car/view", app.carView)
+	router.HandlerFunc(http.MethodGet, "/car/view/:id", app.carView)
 	router.HandlerFunc(http.MethodPost, "/car/create", app.carCreate)
 
 	return router

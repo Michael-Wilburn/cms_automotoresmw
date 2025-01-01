@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
-	"strconv"
 
+	"github.com/google/uuid"
 	"github.com/julienschmidt/httprouter"
 )
 
@@ -36,11 +36,12 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 func (app *application) carView(w http.ResponseWriter, r *http.Request) {
 	params := httprouter.ParamsFromContext(r.Context())
 
-	id, err := strconv.Atoi(params.ByName("id"))
-	if err != nil || id < 1 {
+	id, err := uuid.Parse(params.ByName("id"))
+	if err != nil {
 		app.notFound(w)
 		return
 	}
+
 	fmt.Fprintf(w, "Display a specific car with ID %d...", id)
 }
 

@@ -9,9 +9,13 @@ CREATE TABLE IF NOT EXISTS cars (
     car_domain text NOT NULL,
     price numeric(15,0) NOT NULL,
     info_price numeric(15,0) NOT NULL,
-    currency text NOT NULL DEFAULT '$'::text,
+    currency text NOT NULL DEFAULT '$',
     chasis_code text NOT NULL,
     motor_code text NOT NULL,
     images_urls text[] NOT NULL DEFAULT '{}',
+    codia text,
+    date_in date,
+    date_out date,
+    file_number integer,
     CONSTRAINT car_pkey PRIMARY KEY (id)
 );
